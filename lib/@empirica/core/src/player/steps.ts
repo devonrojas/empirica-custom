@@ -176,7 +176,7 @@ export class Steps {
 
     this.ticker = new BehaviorSubject<Epoch>(Math.floor(pnow()));
     const controller = new AbortController();
-    timerInterval(1000, controller.signal, (t) => {
+    timerInterval(100, controller.signal, (t) => {
       this.ticker.next(t);
     });
   }
